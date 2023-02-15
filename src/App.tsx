@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Character} from "./model/Character";
 import Characters from "./characters.json"
-import CharacterApp from "./component/CharacterApp";
+import CharacterGallery from "./component/CharacterGallery";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <CharacterApp characters={characters} />
+      <CharacterGallery characters={characters} />
     </div>
   );
 }
