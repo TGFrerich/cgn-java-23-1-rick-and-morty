@@ -1,19 +1,29 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Character} from "./model/Character";
-import Characters from "./characters.json"
+// import Characters from "./characters.json"
 import CharacterGallery from "./component/CharacterGallery";
 import UserInput from "./component/UserInput";
+import axios from "axios";
+
 
 function App() {
 
-    const characters: Character[] = Characters;
+
+    const [characters: setCharacters] = useState<Character[]>([]);
     const [text, setText] = useState<string>("")
 
     function handleText(text:string) {
         setText(text)
     }
 
+    function getCharacters(){
+        axios.get("https://rickandmortyapi.com/api/character")
+            .then((response) => {
+                setCharacters(response.data.characters);
+            })
+            .catch((error) => console.error(error))
+    }
     return (
 
         <div className="App">
