@@ -1,7 +1,7 @@
 import {Character} from "../model/Character";
 import "./CharacterCard.css";
 
-type CharacterCardProps = {
+export type CharacterCardProps = {
     character: Character,
 }
 
